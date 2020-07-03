@@ -119,9 +119,10 @@ window.view = {
 	},
 	generateFirstMatrixElements: function() {
 		var size = this.rowsA * this.colsA
-		for ( i = 0 ; i < size ; i++)
+		for ( i = 0 ; i< size ; i++)
 		{
-			var random = Math.floor(Math.random()*15)
+			var random = Math.floor(i)
+			console.log(random)
 			this.matrixA.push(random)
 		}
 		this.resetRowsAndCols()
@@ -135,9 +136,10 @@ window.view = {
 	},
 	generateSecondMatrixElements: function() {
 		var size = this.rowsB * this.colsB
-		for ( i = 0 ; i < size ; i++)
+		for ( i = 1 ; i < size ; i++)
 		{
-			var random = Math.floor(Math.random()*15)
+			var random = Math.floor(i)
+			console.log("matb"+random)
 			this.matrixB.push(random)
 		}
 		this.disableButton('generateB')
@@ -145,6 +147,7 @@ window.view = {
 		this.disableButton('col')
 		this.enableButton('btnStart2D')
 		this.changeClass( 'btnStart2D', 'button myStartButton' )
+		this.matrixCount++
 	},
 	generateMatrixA: function() {
 		var matA = document.createElement('table')
